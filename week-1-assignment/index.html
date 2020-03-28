@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Ebonie's Week 1 Assigment</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" integrity="sha256-2YQRJMXD7pIAPHiXr0s+vlRWA7GYJEK0ARns7k2sbHY=" crossorigin="anonymous" />
+  <script src="react.js"></script>
+  <script src="react-dom.js"></script>
+  <script src="babel.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+
+    const heading = `Metal & Coffee's Album of the Week`;
+    const imageUrl = `album-cover.jpg`;
+    const artistName = `Intronaut`;
+    const albumName = `Fluid Existential Inversions`;
+    const twitterLinkText = `Follow 🤘🏾& ☕️ on Twitter.`;
+    const twitterUrl = `https://twitter.com/metalandcoffee_`;
+
+    const Header = () => {
+      return (
+        <header>
+          <h1 style={ { textAlign: `center` } }>{ heading }</h1>
+        </header>
+      )
+    };
+    const Main = () => {
+      return (
+        <section>
+          <div className="row" style={ { display: `flex`, justifyContent: `center` } }>
+            <div className="three columns">
+              <img src={ imageUrl } style={ { width: `100%` } } />
+            </div>
+            <div className="three columns">
+              <p>{ artistName }</p>
+              <p>{ albumName }</p>
+            </div>
+          </div>
+        </section>
+      )
+    };
+    const Footer = () => {
+      return (
+        <footer>
+          <div className="row" style={ { display: `flex`, justifyContent: `center` } }>
+            <div className="three columns">
+              <a href={ twitterUrl }>{ twitterLinkText }</a>
+            </div>
+          </div>
+        </footer>
+      )
+    };
+
+    const App = () => {
+      return (
+        <div className="container">
+          <Header />
+          <Main />
+          <Footer />
+        </div>
+      )
+    }
+
+    ReactDOM.render(
+      <App />,
+      document.getElementById('root')
+    );
+
+  </script>
+</body>
+
+</html>
